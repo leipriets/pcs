@@ -23,6 +23,11 @@
 
               $(".datepicker").datepicker();
 
+              $("input").on("keyup",function(){
+                  this.value = this.value.toUpperCase();
+              });
+
+
 
             });
           </script>      

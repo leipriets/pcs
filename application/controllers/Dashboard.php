@@ -20,14 +20,12 @@ class Dashboard extends CI_Controller
         }
         $this->session_user = $this->session->userdata('userlogin');
 
-
     }
 
 	public function index(){
 
 		$data['title'] = "PCS";
 		$data['session_user'] = $this->session_user;
-
 
 		$this->load->view('includes/header',$data);
 		$this->load->view('includes/sidenav');

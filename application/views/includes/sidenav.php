@@ -5,10 +5,10 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
       -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+        <a href="#" class="simple-text logo-mini">
           <!-- CT -->
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="#" class="simple-text logo-normal">
           PCS
         </a>
       </div>
@@ -57,10 +57,10 @@
             </a>
           </li>
           <li class="active-pro">
-            <a href="./upgrade.html">
+<!--             <a href="./upgrade.html">
               <i class="now-ui-icons arrows-1_cloud-download-93"></i>
               <p>Upgrade to PRO</p>
-            </a>  
+            </a>   -->
           </li>
         </ul>
       </div>

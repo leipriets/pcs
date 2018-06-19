@@ -32,7 +32,12 @@
 					data: FormData,
 					success:function(msg){
 
-						var notif = "<div class='alert alert-"+msg['notif'].type+" col-sm-12' role='alert'>"+msg['notif'].message+"</div>";
+					var notif = "<div class='alert alert-"+msg['notif'].type+" alert-dismissible fade show col-sm-12' role='alert'>"
+									+"<button type='button' class='close' data-dismiss='alert' aria-label='Close'>"
+										+"<span aria-hidden='true'>&times;</span>"
+									+"</button>"
+									+msg['notif'].message+
+								"</div>";
 
 						if (msg) {
 							$("#register-alert").html(notif);

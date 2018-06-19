@@ -3,8 +3,9 @@
   $helper = new helper();
 
   $civilstatus = array(
-    "single"=>"single",
-    "married"=>"widowed",
+    "SINGLE"=>"SINGLE",
+    "MARRIED"=>"MARRIED",
+    "WIDOWED"=>"WIDOWED",
   );    
 
 
@@ -17,7 +18,7 @@
                 <h5 class="title">Personal Information</h5>
               </div>
               <div class="card-body">
-                <form>
+                <form method="post">
                   <div class="row">
                     <div class="col-md-1">
                       <div class="form-group">
@@ -54,37 +55,37 @@
                       <div class="col-md-2">
                         <div class="form-group">
                           <label>Baranggay</label>
-                          <input type="text" name="brgy" class="form-control form-control-sm " placeholder="Baranggay">
+                          <input type="text" name="brgy" class="form-control form-control-sm ">
                         </div>
                       </div>
                       <div class="col-md-2">
                         <div class="form-group">
                           <label>District</label>
-                          <input type="text" name="brgy" class="form-control form-control-sm " placeholder="District">
+                          <input type="text" name="brgy" class="form-control form-control-sm ">
                         </div>
                       </div>
                       <div class="col-md-2">
                         <div class="form-group">
                           <label>House No.</label>
-                          <input type="text" name="brgy" class="form-control form-control-sm " placeholder="House No.">
+                          <input type="text" name="brgy" class="form-control form-control-sm ">
                         </div>
                       </div>
                       <div class="col-md-2">
                         <div class="form-group">
                           <label>Street</label>
-                          <input type="text" name="brgy" class="form-control form-control-sm " placeholder="Street">
+                          <input type="text" name="brgy" class="form-control form-control-sm ">
                         </div>
                       </div>
                       <div class="col-md-2">
                         <div class="form-group">
                           <label>City</label>
-                          <input type="text" name="brgy" class="form-control form-control-sm " placeholder="City">
+                          <input type="text" name="brgy" class="form-control form-control-sm ">
                         </div>
                       </div>
                       <div class="col-md-2">
                         <div class="form-group">
                           <label>Date of birth</label>
-                          <input type="text" name="brgy" class="form-control form-control-sm datepicker" placeholder="Date of birth">
+                          <input type="text" name="brgy" class="form-control form-control-sm datepicker" placeholder="Birthdate" readonly>
                         </div>
                       </div>
                   </div>
@@ -92,39 +93,39 @@
                       <div class="col-md-2">
                         <div class="form-group">
                           <label>Civil Status</label>
-                          <select class="form-control">
-                            <?= $helper->arrayToHTMLOptionByKey($civilstatus); ?>
+                          <select class="form-control" name="status">
+                            <?= $helper->arrayToHTMLOptionByKey($civilstatus,$this->input->post('status'),true,"-Select Status -"); ?>
                           </select>
                         </div>
                       </div>
                       <div class="col-md-2">
                         <div class="form-group">
                           <label>Religion</label>
-                          <input type="text" name="brgy" class="form-control form-control-sm " placeholder="Religion">
+                          <input type="text" name="brgy" class="form-control form-control-sm " >
                         </div>
                       </div>
                       <div class="col-md-2">
                         <div class="form-group">
                           <label>Occupation</label>
-                          <input type="text" name="brgy" class="form-control form-control-sm " placeholder="Occupation">
+                          <input type="text" name="brgy" class="form-control form-control-sm ">
                         </div>
                       </div>
                       <div class="col-md-2">
                         <div class="form-group">
                           <label>Rest.Cert.No.</label>
-                          <input type="text" name="brgy" class="form-control form-control-sm " placeholder="Rest.Cert.No.">
+                          <input type="text" name="brgy" class="form-control form-control-sm ">
                         </div>
                       </div>
                       <div class="col-md-2">
                         <div class="form-group">
                           <label>Date Issued</label>
-                          <input type="text" name="brgy" class="form-control form-control-sm datepicker" placeholder="Date Issued">
+                          <input type="text" name="brgy" class="form-control form-control-sm datepicker" placeholder="select date" readonly>
                         </div>
                       </div>
                       <div class="col-md-2">
                         <div class="form-group">
                           <label>Issued at</label>
-                          <input type="text" name="brgy" class="form-control form-control-sm " placeholder="Issued at">
+                          <input type="text" name="brgy" class="form-control form-control-sm " >
                         </div>
                       </div>
                   </div>
@@ -140,7 +141,7 @@
                   <div class="row">
                       <div class="col-md-4">
                           <br>
-                         <button class="btn btn-primary btn-round">Send</button>
+                         <button type="submit" class="btn btn-primary btn-round">Save</button>
                       </div>                    
                   </div>
 
