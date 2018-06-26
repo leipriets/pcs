@@ -7,44 +7,6 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 class Auth extends CI_Controller    
 {
 
-    public function samplesendmail(){
-
-            $this->load->helper('url');
-
-        require_once(base_url("vendor/phpmailer/phpmailer/PHPMailer.php"));
-
-        $config = new PHPMailer();
-
-
-        try {
-            //Server settings
-            $config->SMTPDebug = 2;                                 // Enable verbose debug output
-            $config->isSMTP();                                      // Set mailer to use SMTP
-            $config->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-            $config->SMTPAuth = true;                               // Enable SMTP authentication
-            $config->Username = 'leipriets@gmail.com';                 // SMTP username
-            $config->Password = 'solidshot';                           // SMTP password
-            $config->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-            $config->Port = 587;                                    // TCP port to connect to
-
-            //Recipients
-            $config->setFrom('leipriets@gmail.com', 'Leo Pogi');
-            $config->addAddress("leipriets24@gmail.com");     // Add a recipient
-
-            //Content
-            $config->isHTML(true);                                  // Set email format to HTML
-            $config->Subject = 'Here is the subject';
-            $config->Body    = 'This is the HTML message body <b>in bold!</b>';
-            $config->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-            $config->send();
-            echo  'Message has been sent';
-        } catch (Exception $e) {
-            echo 'Message could not be sent. Mailer Error: ', $config->ErrorInfo;
-        }
-    }
-
-
     public function index() {
         redirect(base_url('auth/login'));
     }
